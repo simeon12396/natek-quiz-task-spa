@@ -1,15 +1,19 @@
 import { ThemeProvider } from '@material-ui/core';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { store } from './store';
 import MaterialUITheme from './theme/theme';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={MaterialUITheme}>
-      <App />
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={MaterialUITheme}>
+        <App />
+      </ThemeProvider>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

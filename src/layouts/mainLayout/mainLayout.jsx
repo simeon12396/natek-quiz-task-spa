@@ -1,13 +1,27 @@
-const MainLayout = (props) => {
-    const { children } = props;
+import Footer from "../../components/footer/footer";
+import Header from "../../components/header/header";
+import { makeStyles } from '@material-ui/core/styles';
+
+const MainLayout = ({children}) => {
+    const styles = useStyles();
 
     return(
-        <>
-            <h1>header</h1>
-            {children}
-            <h1>footer</h1>
-        </>
+        <div>
+            <Header />
+            <main className={styles.main}>
+                {children}
+            </main>
+            <Footer />
+        </div>
     )
-};
+}
 
 export default MainLayout;
+
+const useStyles = makeStyles((theme) => ({
+    main: {
+        "& > div": {
+            height: "calc(100vh - 120px)",
+        }
+    },
+  }));

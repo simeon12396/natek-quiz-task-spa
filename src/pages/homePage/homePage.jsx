@@ -4,6 +4,7 @@ import QuizImage from "../../pictures/quizImage.png";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { fetchCSBooleanQuestions, fetchCSMultipleChoicesQuestions } from "../../store/actions/computerScienceQuizActions/computerSceinceQuizActions";
+import { fetchSportsBooleanQuestions, fetchSportsMultipleChoicesQuestions } from "../../store/actions/sportsQuizActions/sportsQuizActions";
 
 const HomePage = () => {
     const styles = useStyles();
@@ -12,6 +13,8 @@ const HomePage = () => {
     useEffect(() => {
         dispatch(fetchCSBooleanQuestions());
         dispatch(fetchCSMultipleChoicesQuestions());
+        dispatch(fetchSportsBooleanQuestions());
+        dispatch(fetchSportsMultipleChoicesQuestions());
     }, []);
 
     return(

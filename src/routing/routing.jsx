@@ -4,7 +4,8 @@ import CustomLoading from "../components/common/loadingSpinner/customLoading";
 import MainLayout from "../layouts/mainLayout/mainLayout";
 
 const HomePage = lazy(() => import("../pages/homePage/homePage"));
-const QuizPage = lazy(() => import('../pages/quizPage/quizPage'));
+const QuizCSPage = lazy(() => import('../pages/quizComputerSciencePage/quizComputerSciencePage'));
+const QuizSportsPage = lazy(() => import('../pages/quizSportsPage/quizSportsPage'));
 
 const Routing = () => (
   <Router>
@@ -12,7 +13,8 @@ const Routing = () => (
       <Suspense fallback={<CustomLoading loadingType="circular" />}>
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route exact path="/quiz/:quizType" component={QuizPage} />
+          <Route exact path="/quiz/computer-science" component={QuizCSPage} />
+          <Route exact path="/quiz/sports" component={QuizSportsPage} />
         </Switch>
       </Suspense>
     </MainLayout>

@@ -5,7 +5,7 @@
       "category": "Entertainment: Music",
       "type": "boolean",
       "difficulty": "medium",
-      "question": "Rapper Snoop Dogg&#039;s real name is &#039;Cordozar Calvin Broadus, Jr.&#039;.",
+      "question": "Rapper Snoop Dogg's real name is 'Cordozar Calvin Broadus, Jr.'.",
       "correct_answer": "True",
       "incorrect_answers": [
         "False"
@@ -15,7 +15,7 @@
       "category": "Entertainment: Music",
       "type": "boolean",
       "difficulty": "medium",
-      "question": "Norwegian producer Kygo released a remix of the song &quot;Sexual Healing&quot; by Marvin Gaye.",
+      "question": "Norwegian producer Kygo released a remix of the song \"'Sexual Healing\"' by Marvin Gaye.",
       "correct_answer": "True",
       "incorrect_answers": [
         "False"
@@ -35,7 +35,7 @@
       "category": "Entertainment: Music",
       "type": "boolean",
       "difficulty": "medium",
-      "question": "For his performance at ComplexCon 2016 in Long Beach, California, Skrillex revived his &quot;Mothership&quot; set piece for one night only.",
+      "question": "For his performance at ComplexCon 2016 in Long Beach, California, Skrillex revived his \"'Mothership\"' set piece for one night only.",
       "correct_answer": "True",
       "incorrect_answers": [
         "False"
@@ -55,7 +55,7 @@
       "category": "Entertainment: Music",
       "type": "boolean",
       "difficulty": "medium",
-      "question": "Pink Guy&#039;s debut album was &quot;Pink Season&quot;.",
+      "question": "Pink Guy's debut album was \"'Pink Season\"'.",
       "correct_answer": "False",
       "incorrect_answers": [
         "True"
@@ -65,7 +65,7 @@
       "category": "Entertainment: Music",
       "type": "boolean",
       "difficulty": "medium",
-      "question": "Dave Grohl recorded the Foo Fighters&#039; debut, &quot;Foo Fighters,&quot; by himself.",
+      "question": "Dave Grohl recorded the Foo Fighters' debut, \"'Foo Fighters,\"' by himself.",
       "correct_answer": "True",
       "incorrect_answers": [
         "False"
@@ -75,7 +75,7 @@
       "category": "Entertainment: Music",
       "type": "boolean",
       "difficulty": "medium",
-      "question": "A Facebook campaign placed Rage Against The Machine&#039;s &quot;Killing in the Name Of&quot; as the UK Christmas Number 1 in 2009.",
+      "question": "A Facebook campaign placed Rage Against The Machine's \"'Killing in the Name Of\"' as the UK Christmas Number 1 in 2009.",
       "correct_answer": "True",
       "incorrect_answers": [
         "False"
@@ -85,7 +85,7 @@
       "category": "Entertainment: Music",
       "type": "boolean",
       "difficulty": "medium",
-      "question": "Metallica collaborated with Rowan Atkinson&#039;s Mr Bean on a 1992 comic relief single.",
+      "question": "Metallica collaborated with Rowan Atkinson's Mr Bean on a 1992 comic relief single.",
       "correct_answer": "False",
       "incorrect_answers": [
         "True"
@@ -95,7 +95,7 @@
       "category": "Entertainment: Music",
       "type": "boolean",
       "difficulty": "medium",
-      "question": "Green Day&#039;s album &#039;American Idiot&#039; is considered a &quot;punk rock opera.&quot;",
+      "question": "Green Day's album 'American Idiot' is considered a \"'punk rock opera.\"'",
       "correct_answer": "True",
       "incorrect_answers": [
         "False"

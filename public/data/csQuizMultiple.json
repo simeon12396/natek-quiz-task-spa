@@ -1,0 +1,125 @@
+{
+    "response_code": 0,
+    "results": [
+      {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "All of the following programs are classified as raster graphics editors EXCEPT:",
+        "correct_answer": "Inkscape",
+        "incorrect_answers": [
+          "Paint.NET",
+          "GIMP",
+          "Adobe Photoshop"
+        ]
+      },
+      {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "How many cores does the Intel i7-6950X have?",
+        "correct_answer": "10",
+        "incorrect_answers": [
+          "12",
+          "8",
+          "4"
+        ]
+      },
+      {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "In the server hosting industry IaaS stands for...",
+        "correct_answer": "Infrastructure as a Service",
+        "incorrect_answers": [
+          "Internet as a Service",
+          "Internet and a Server",
+          "Infrastructure as a Server"
+        ]
+      },
+      {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "In HTML, which non-standard tag used to be be used to make elements scroll across the viewport?",
+        "correct_answer": "&lt;marquee&gt;&lt;/marquee&gt;",
+        "incorrect_answers": [
+          "&lt;scroll&gt;&lt;/scroll&gt;",
+          "&lt;move&gt;&lt;/move&gt;",
+          "&lt;slide&gt;&lt;/slide&gt;"
+        ]
+      },
+      {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "In programming, the ternary operator is mostly defined with what symbol(s)?",
+        "correct_answer": "?:",
+        "incorrect_answers": [
+          "??",
+          "if then",
+          "?"
+        ]
+      },
+      {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "Which of these programming languages is a low-level language?",
+        "correct_answer": "Assembly",
+        "incorrect_answers": [
+          "Python",
+          "C#",
+          "Pascal"
+        ]
+      },
+      {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": ".at is the top-level domain for what country?",
+        "correct_answer": "Austria",
+        "incorrect_answers": [
+          "Argentina",
+          "Australia",
+          "Angola"
+        ]
+      },
+      {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "Approximately how many Apple I personal computers were created?",
+        "correct_answer": "200",
+        "incorrect_answers": [
+          "100",
+          "500",
+          "1000"
+        ]
+      },
+      {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "In programming, what do you call functions with the same name but different implementations?",
+        "correct_answer": "Overloading",
+        "incorrect_answers": [
+          "Overriding",
+          "Abstracting",
+          "Inheriting"
+        ]
+      },
+      {
+        "category": "Science: Computers",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "Unix Time is defined as the number of seconds that have elapsed since when?",
+        "correct_answer": "Midnight, January 1, 1970",
+        "incorrect_answers": [
+          "Midnight, July 4, 1976",
+          "Midnight on the creator of Unix&#039;s birthday",
+          "Midnight, July 4, 1980"
+        ]
+      }
+    ]
+  }

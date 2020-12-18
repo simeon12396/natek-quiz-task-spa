@@ -9,7 +9,7 @@ const QuizComputerSciencePage = () => {
     return(
         <div className={styles.root}>
             <div className={styles.quizContainer}>
-                <SkeletonQuiz questions={csQuizQuestions} selectedMode="binary" />
+                <SkeletonQuiz questions={csQuizQuestions} quizType="computer-science" />
             </div>
         </div>
     )

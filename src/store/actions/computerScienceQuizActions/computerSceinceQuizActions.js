@@ -1,5 +1,5 @@
 import { makeHttpService } from "../../../services/httpServices";
-import { SET_CS_BOOLEAN_QUESTIONS, SET_CS_MULTIPLE_CHOICES_QUESTIONS } from "../../types/computerScienceQuizTypes/computerScienceQuizTypes";
+import { SET_CS_BOOLEAN_QUESTIONS, SET_CS_MULTIPLE_CHOICES_QUESTIONS, SET_CS_RESULT, SET_RESTART_CS_QUIZ } from "../../types/computerScienceQuizTypes/computerScienceQuizTypes";
 
 // SYNC ACTIONS
 
@@ -13,20 +13,29 @@ const setCSMultipleChoicesQuestions = payload => ({
     payload,
 });
 
+const setCSResult = payload => ({
+    type: SET_CS_RESULT,
+    payload,
+});
+
+const setRestartCSQuiz = () => ({
+    type: SET_RESTART_CS_QUIZ,
+});
+
 //  ASYNC ACTIONS 
 
 const fetchCSBooleanQuestions = () => {
     return async dispatch => {
-        const computerScienceBooleanQuestions = await makeHttpService("get", "amount=10&category=18&difficulty=medium&type=boolean");
+        const computerScienceBooleanQuestions = await makeHttpService("get", "data/csQuizBoolean.json");
         dispatch(setCSBooleanQuestions(computerScienceBooleanQuestions))
     };
 };
 
 const fetchCSMultipleChoicesQuestions = () => {
     return async dispatch => {
-        const computerScienceMultipleChoicesQuestions = await makeHttpService("get", "amount=10&category=18&difficulty=medium&type=multiple");
+        const computerScienceMultipleChoicesQuestions = await makeHttpService("get", "data/csQuizMultiple.json");
         dispatch(setCSMultipleChoicesQuestions(computerScienceMultipleChoicesQuestions))
     };
 };
 
-export { setCSMultipleChoicesQuestions, setCSBooleanQuestions, fetchCSBooleanQuestions, fetchCSMultipleChoicesQuestions }
+export { setRestartCSQuiz, setCSResult, setCSMultipleChoicesQuestions, setCSBooleanQuestions, fetchCSBooleanQuestions, fetchCSMultipleChoicesQuestions }

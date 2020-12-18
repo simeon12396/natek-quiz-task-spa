@@ -50,6 +50,7 @@ const useStyles = makeStyles((theme) => ({
     },
     link: {
         textDecoration: "none",
-        color: theme.palette.primary.main
+        color: theme.palette.primary.main,
+        width: "100%"
     }
   }));

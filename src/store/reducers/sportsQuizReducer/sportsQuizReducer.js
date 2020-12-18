@@ -1,8 +1,9 @@
-import { SET_SPORTS_BOOLEAN_QUESTIONS, SET_SPORTS_MULTIPLE_CHOICES_QUESTIONS } from "../../types/sportsQuizTypes/sportsQuizTypes";
+import { SET_RESTART_SPORTS_QUIZ, SET_SPORTS_BOOLEAN_QUESTIONS, SET_SPORTS_MULTIPLE_CHOICES_QUESTIONS, SET_SPORTS_RESULT } from "../../types/sportsQuizTypes/sportsQuizTypes";
 
 const initialState = {
     booleanQuestions: [],
-    multipleChoicesQuestions: []
+    multipleChoicesQuestions: [],
+    result: []
 };
 
 const sportsQuizReducer = (state = initialState, {type, payload}) => {
@@ -17,9 +18,19 @@ const sportsQuizReducer = (state = initialState, {type, payload}) => {
             ...state,
             multipleChoicesQuestions: payload
         };
+        case SET_SPORTS_RESULT: 
+          return {
+            ...state,
+            result: payload
+        };
+        case SET_RESTART_SPORTS_QUIZ: 
+          return {
+            ...state,
+            result: []
+        };
         default: 
           return state;
-    }
+    };
 };
 
 export { sportsQuizReducer }

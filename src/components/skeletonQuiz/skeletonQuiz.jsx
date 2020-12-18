@@ -3,40 +3,95 @@ import { Paper, CardActions, Typography, Snackbar, Button, IconButton  } from '@
 import CustomButton from '../common/buttons/customButton';
 import { useState } from "react";
 import { RadioGroup, FormControlLabel, Radio  } from '@material-ui/core';
+import { useDispatch } from 'react-redux';
+import { NavLink } from 'react-router-dom';
+import { setCSResult, setRestartCSQuiz } from '../../store/actions/computerScienceQuizActions/computerSceinceQuizActions';
+import { setRestartSportsQuiz, setSportsResult } from '../../store/actions/sportsQuizActions/sportsQuizActions';
+import CustomSnackbar from '../common/snackbar/customSnackbar';
 
 const SkeletonQuiz = (props) => {
-    const { questions, selectedMode } = props;
+    const { questions, quizType } = props;
     const { booleanQuestions, multipleChoicesQuestions } = questions;
 
+    const dispatch = useDispatch();
     const styles = useStyles();
     const [questionCounter, setQuestionCounter] = useState(0);
     const [selectedCurrentAnswers, setSelectedCurrentAnswer] = useState("");
     const [selectedAnswers, setSelectedAnswers] = useState([]);
-    const [openAlert, setOpenAlert] = useState(false);
-
+    const [openAlert, setOpenAlert] = useState({ optionAlert: false, modeAlert: false });
+    const [isQuizSubmitted, setIsQuizSubmitted] = useState(false);
+    const [quizMode, setQuizMode] = useState("binary");
+    
     const booleanAnswerOptions = [...booleanQuestions.results[questionCounter].incorrect_answers, booleanQuestions.results[questionCounter].correct_answer];
     const multipleChoicesAnswerOptions = [...multipleChoicesQuestions.results[questionCounter].incorrect_answers, multipleChoicesQuestions.results[questionCounter].correct_answer];
 
-    const handleClose = () => {
-        setOpenAlert(false);
+    const handleCloseAlert = (alertType) => (e) => {
+        if (alertType === "option-alert") {
+            setOpenAlert({optionAlert: true, modeAlert: false});
 
-        setInterval(() => {
-            setOpenAlert(false);
-        }, 6000);
+            setTimeout(() => {
+                setOpenAlert({optionAlert: false, modeAlert: false});
+            }, 1500);
+
+            return;
+        }
+
+        if (alertType === "mode-alert") {
+            setOpenAlert({optionAlert: false, modeAlert: true});
+
+            setTimeout(() => {
+                setOpenAlert({optionAlert: false, modeAlert: false});
+            }, 1500);
+
+            return;
+        }
     };
+
     const handleClickNext = () => {
         if(selectedCurrentAnswers === "") {
-            setOpenAlert(true);
+            setOpenAlert({optionAlert: true, modeAlert: false});
             return;
         };
 
         setSelectedCurrentAnswer("");
         setQuestionCounter(currState => currState + 1);
     };
-    const handleClickSubmit = () => console.log("submit quiz");
+
+    const handleClickSubmit = () => {
+        const correctAnswers = quizMode === "binary" ? booleanQuestions.results.map(b => b.correct_answer) : multipleChoicesQuestions.results.map(b => b.correct_answer);
+        const answerResults = correctAnswers.map((c, index) => selectedAnswers[index] === c ? 
+        ({ isCorrect: true, correctAnswer: c, yourAnswer: selectedAnswers[index] }) : 
+        ({ isCorrect: false, correctAnswer: c, yourAnswer: selectedAnswers[index]}));
+        setIsQuizSubmitted(true);
+        dispatch(quizType === "computer-science" ? setCSResult({ answerResults, quizMode }) : setSportsResult({ answerResults, quizMode }));
+    };
+
     const handleChangeOption = (e) => {
-        setSelectedCurrentAnswer(e.target.value);
-        setSelectedAnswers([...selectedAnswers, {[questionCounter]: e.target.value}], [questionCounter]);
+        const targetValue = e.target.value;
+
+        if (selectedCurrentAnswers !== "") {
+            setOpenAlert({optionAlert: false, modeAlert: true});
+            return;
+        };
+
+        setSelectedCurrentAnswer(targetValue);
+        setSelectedAnswers([...selectedAnswers, targetValue]);
+    };
+
+    const handleClickRestart = () => resetQuiz();
+
+    const handleChangeQuizMode = (e) => {
+        setQuizMode(e.target.value);
+        resetQuiz();
+    };
+
+    const resetQuiz = () => {
+        setQuestionCounter(0);
+        setSelectedCurrentAnswer("");
+        setSelectedAnswers([]);
+        setOpenAlert({openAlert: false, modeAlert: false});
+        setIsQuizSubmitted(false);
+        dispatch(quizType === "computer-science" ? setRestartCSQuiz() : setRestartSportsQuiz());
     };
 
     if (!questions) {
@@ -53,23 +108,33 @@ const SkeletonQuiz = (props) => {
                     </div>
                 </Paper>
 
-                <Paper elevation={0} className={styles.contetQuiz}>
+                <div className={styles.quizModeContainer}>
+                    <Typography variant="body1">Select mode:</Typography>
+                    <RadioGroup name="quizMode" value={quizMode} onChange={handleChangeQuizMode} classes={{root: styles.radioGroupRoot}}>
+                        <FormControlLabel value={"binary"} control={<Radio classes={{checked: styles.radioChecked}} />} label="Binary" />
+                        <FormControlLabel value={"multiple"} control={<Radio classes={{checked: styles.radioChecked}} />} label="Multiple" />
+                    </RadioGroup>
+                </div>
+        
+                <Paper elevation={0} className={styles.contentQuiz}>
                     <div>
-                        { selectedMode === "binary" && <Typography variant="body2">{`${booleanQuestions.results[questionCounter].question}`}</Typography> }
+                        { quizMode === "binary" && <Typography variant="body2">{booleanQuestions.results[questionCounter].question}</Typography> }
                         { 
-                            selectedMode === "multiple" && 
-                            <Typography variant="body2">{`${multipleChoicesQuestions.results[questionCounter].question}`}</Typography>
+                            quizMode === "multiple" && 
+                            <Typography variant="body2">{multipleChoicesQuestions.results[questionCounter].question}</Typography>
                         }                             
                     </div>
                     <div>
-                        <RadioGroup aria-label="gender" name="gender1" value={selectedCurrentAnswers} onChange={handleChangeOption}>
+                        <RadioGroup name="quizOptions" value={selectedCurrentAnswers} onChange={handleChangeOption}>
                             { 
-                                selectedMode === "binary" && 
-                                booleanAnswerOptions.map(b => (<FormControlLabel value={b} control={<Radio classes={{checked: styles.radioChecked}} />} label={b} key={b}/>))
+                                quizMode === "binary" && 
+                                booleanAnswerOptions.map(b => (
+                                    <FormControlLabel value={b} control={<Radio classes={{checked: styles.radioChecked}} />} label={b === "True" ? "Yes" : "No"} key={b} />))
                             }
                             {
-                                selectedMode === "multiple" &&  
-                                multipleChoicesAnswerOptions.map(m => (<FormControlLabel value={m} control={<Radio classes={{checked: styles.radioChecked}} />} label={m} key={m}/>))
+                                quizMode === "multiple" &&  
+                                multipleChoicesAnswerOptions.map(m => (
+                                    <FormControlLabel value={m} control={<Radio classes={{checked: styles.radioChecked}} />} label={m} key={m} />))
                             }
                         </RadioGroup>
                     </div>
@@ -77,28 +142,41 @@ const SkeletonQuiz = (props) => {
                 <CardActions classes={{root: styles.cardActionsRoot}}>
                     <CustomButton disabled={questionCounter === 9 ? true : false} onClick={handleClickNext}>Next question</CustomButton>
 
-                    {questionCounter === 9 && <CustomButton onClick={handleClickSubmit}>Submit</CustomButton>}
+                    { questionCounter === 9 && <CustomButton onClick={handleClickSubmit} disabled={isQuizSubmitted}>Submit</CustomButton>}
+                    
+                    { isQuizSubmitted && 
+                        <CustomButton variant="contained" color="primary" className={styles.restartButton} onClick={handleClickRestart}>Restart</CustomButton>
+                    }
 
+                    { isQuizSubmitted && 
+                        <CustomButton variant="contained" color="primary">
+                            <NavLink to={`/quiz/${quizType === "sports" ? "sports" : "computer-science"}-result`} className={styles.link}>View Result</NavLink>
+                        </CustomButton>
+                    }
                 </CardActions>
             </Paper>
+            
+            { 
+                openAlert.optionAlert &&
+                <CustomSnackbar
+                    alertType="option-alert" 
+                    openAlert={openAlert.optionAlert} 
+                    handleCloseAlert={handleCloseAlert} 
+                    delayHideDuration={1500} 
+                    closeLabel="Close"
+                    messageLabel="You can't send empty answer! Please, enter one of the options!"
+                />
+            }
 
-            {openAlert && 
-                <Snackbar
-                    anchorOrigin={{
-                    vertical: 'top',
-                    horizontal: 'right',
-                    }}
-                    open={openAlert}
-                    autoHideDuration={6000}
-                    onClose={handleClose}
-                    message="You can't send empty answer! Please, enter one of the options!"
-                    action={
-                    <>
-                        <Button color="secondary" size="small" onClick={handleClose}>Close</Button>
-                        <IconButton size="small" aria-label="close" color="inherit" onClick={handleClose}>
-                        </IconButton>
-                    </>
-                    }
+            { 
+                openAlert.modeAlert &&
+                <CustomSnackbar
+                    alertType="mode-alert" 
+                    openAlert={openAlert.modeAlert} 
+                    handleCloseAlert={handleCloseAlert} 
+                    delayHideDuration={1500} 
+                    closeLabel="Close"
+                    messageLabel="You've already selected an answer!"
                 />
             }
         </>
@@ -111,7 +189,7 @@ const useStyles = makeStyles((theme) => ({
     headerQuiz: {
         padding: 8,
     },
-    contetQuiz: {
+    contentQuiz: {
         padding: 8,
         display: "flex",
 
@@ -132,5 +210,22 @@ const useStyles = makeStyles((theme) => ({
     },
     radioChecked: {
         color: `${theme.palette.primary.main} !important`
+    },
+    link: {
+        color: theme.palette.secondary.main,
+        textDecoration: "none"
+    },
+    restartButton: {
+        color: "white"
+    },
+    quizModeContainer: {
+        display: "flex",
+        alignItems: "center",
+        padding: 8
+    },
+    radioGroupRoot: {
+        display: "flex",
+        flexDirection: "row",
+        marginLeft: 10
     }
   }));

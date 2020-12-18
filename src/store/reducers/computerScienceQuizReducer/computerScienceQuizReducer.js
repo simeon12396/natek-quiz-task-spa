@@ -1,8 +1,9 @@
-import { SET_CS_BOOLEAN_QUESTIONS, SET_CS_MULTIPLE_CHOICES_QUESTIONS } from "../../types/computerScienceQuizTypes/computerScienceQuizTypes";
+import { SET_CS_BOOLEAN_QUESTIONS, SET_CS_MULTIPLE_CHOICES_QUESTIONS, SET_CS_RESULT, SET_RESTART_CS_QUIZ } from "../../types/computerScienceQuizTypes/computerScienceQuizTypes";
 
 const initialState = {
     booleanQuestions: [],
-    multipleChoicesQuestions: []
+    multipleChoicesQuestions: [],
+    result: []
 };
 
 const computerScienceQuizReducer = (state = initialState, {type, payload}) => {
@@ -13,9 +14,19 @@ const computerScienceQuizReducer = (state = initialState, {type, payload}) => {
             booleanQuestions: payload
           };
         case SET_CS_MULTIPLE_CHOICES_QUESTIONS:
-            return {
+          return {
+          ...state,
+          multipleChoicesQuestions: payload
+        };
+        case SET_CS_RESULT:
+          return {
             ...state,
-            multipleChoicesQuestions: payload
+            result: payload
+        };
+        case SET_RESTART_CS_QUIZ:
+          return {
+            ...state,
+            result: []
         };
         default: 
           return state;

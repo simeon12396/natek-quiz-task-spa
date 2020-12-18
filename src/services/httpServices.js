@@ -1,11 +1,9 @@
-const apiURL = "https://opentdb.com/api.php?";
-
-const makeHttpService = async (requestType, endPoint) => {
-    if(requestType === "get") {
-        const fetchQuizQuestions = await fetch(`${apiURL}${endPoint}`);
+const makeHttpService = async (requestType, jsonName) => {
+    if (requestType === "get") {
+        const fetchQuizQuestions = await fetch(jsonName);
 
         return fetchQuizQuestions.json();
     }
 };
 
-export { makeHttpService }
+export { makeHttpService };

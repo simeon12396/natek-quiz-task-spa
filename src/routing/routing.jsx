@@ -6,6 +6,9 @@ import MainLayout from "../layouts/mainLayout/mainLayout";
 const HomePage = lazy(() => import("../pages/homePage/homePage"));
 const QuizCSPage = lazy(() => import('../pages/quizComputerSciencePage/quizComputerSciencePage'));
 const QuizSportsPage = lazy(() => import('../pages/quizSportsPage/quizSportsPage'));
+const QuizResultPage = lazy(() => import("../pages/quizResultPage/quizResultPage"));
+
+//TODO If you have a several different quiz types, the better solution will be to createa a route with dynamic parameter, like '/:quizType'. 
 
 const Routing = () => (
   <Router>
@@ -15,6 +18,7 @@ const Routing = () => (
           <Route exact path="/" component={HomePage} />
           <Route exact path="/quiz/computer-science" component={QuizCSPage} />
           <Route exact path="/quiz/sports" component={QuizSportsPage} />
+          <Route exact path="/quiz/:quizTypeResult-result" component={QuizResultPage} />
         </Switch>
       </Suspense>
     </MainLayout>

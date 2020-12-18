@@ -1,0 +1,125 @@
+{
+    "response_code": 0,
+    "results": [
+      {
+        "category": "Entertainment: Music",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "Who had a US and UK number 1 hit in 1962 with the instrumental, &#039;Telstar&#039;?",
+        "correct_answer": "The Tornados",
+        "incorrect_answers": [
+          "The Ventures",
+          "The Spotnicks",
+          "The Tremeloes"
+        ]
+      },
+      {
+        "category": "Entertainment: Music",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "Which of these is NOT an album released by The Beatles?",
+        "correct_answer": "The Wall",
+        "incorrect_answers": [
+          "Abbey Road",
+          "Magical Mystery Tour",
+          "Revolver"
+        ]
+      },
+      {
+        "category": "Entertainment: Music",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "The song &quot;Twin Size Mattress&quot; was written by which band?",
+        "correct_answer": "The Front Bottoms",
+        "incorrect_answers": [
+          "Twenty One Pilots",
+          "The Wonder Years",
+          "The Smith Street Band"
+        ]
+      },
+      {
+        "category": "Entertainment: Music",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "Who is the primary lyricist for Canadian progressive rock band Rush?",
+        "correct_answer": "Neil Peart",
+        "incorrect_answers": [
+          "Geddy Lee",
+          "Alex Lifeson",
+          "John Rutsey"
+        ]
+      },
+      {
+        "category": "Entertainment: Music",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "Which of these is NOT a song on The Beatles&#039; 1968 self titled album, also known as the White album?",
+        "correct_answer": "Being For The Benefit Of Mr. Kite!",
+        "incorrect_answers": [
+          "Why Don&#039;t We Do It in the Road?",
+          "Everybody&#039;s Got Something to Hide Except Me and My Monkey",
+          "The Continuing Story of Bungalow Bill"
+        ]
+      },
+      {
+        "category": "Entertainment: Music",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "Who is the lead singer of Silverchair?",
+        "correct_answer": "Daniel Johns",
+        "incorrect_answers": [
+          "Ben Gillies",
+          "Chris Joannou",
+          "George Costanza"
+        ]
+      },
+      {
+        "category": "Entertainment: Music",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "Cryoshell, known for &quot;Creeping in My Soul&quot; did the advertising music for what Lego Theme?",
+        "correct_answer": "Bionicle",
+        "incorrect_answers": [
+          "Hero Factory",
+          "Ben 10 Alien Force",
+          "Star Wars"
+        ]
+      },
+      {
+        "category": "Entertainment: Music",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "Which member of &quot;The Beatles&quot; narrated episodes of &quot;Thomas the Tank Engine&quot;?",
+        "correct_answer": "Ringo Starr",
+        "incorrect_answers": [
+          "George Harrison",
+          "John Lennon",
+          "Paul McCartney"
+        ]
+      },
+      {
+        "category": "Entertainment: Music",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "Who is the vocalist and frontman of rock band &quot;Guns N&#039; Roses&quot;?",
+        "correct_answer": "Axl Rose",
+        "incorrect_answers": [
+          "Kurt Cobain",
+          "Slash",
+          "Bono"
+        ]
+      },
+      {
+        "category": "Entertainment: Music",
+        "type": "multiple",
+        "difficulty": "medium",
+        "question": "Which one of these people has been in the band &#039;&#039;Metallica&#039;&#039; in the past?",
+        "correct_answer": "Dave Mustaine",
+        "incorrect_answers": [
+          "Kurt Cobain",
+          "Joey Belladonna",
+          "Dave Lombardo"
+        ]
+      }
+    ]
+  }

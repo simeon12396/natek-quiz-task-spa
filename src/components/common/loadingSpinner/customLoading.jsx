@@ -21,7 +21,10 @@ export default CustomLoading;
 const useStyles = makeStyles(theme => ({
     circularRoot: {
         width: "60px! important",
-        height: "60px! important"
+        height: "60px! important",
+        position: "fixed",
+        left: "50%",
+        top: "50%"
     },
     linearRoot: {
         width: 500

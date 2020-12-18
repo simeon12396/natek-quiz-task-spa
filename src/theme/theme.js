@@ -7,9 +7,15 @@ const MaterialUITheme = createMuiTheme({
         },
         secondary: {
             main: "#fff",
-            secondary: "silver"
         },
+        error: {
+            main: "#FF0000"
+        },
+        success: {
+            main: "#008000"
+        }
     },
+    spacing: 10
 });
 
 export default MaterialUITheme;

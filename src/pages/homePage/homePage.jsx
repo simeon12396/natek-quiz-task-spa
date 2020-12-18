@@ -32,6 +32,12 @@ const useStyles = makeStyles(theme => ({
         margin: "0 auto",
         height: 500,
         width: 800,
+        [theme.breakpoints.down("sm")]: {
+            width: 600
+        },
+        [theme.breakpoints.down("xs")]: {
+            width: "100%"
+        },
         color: theme.palette.primary.main,
         display: "flex",
         flexDirection: "column",
@@ -40,8 +46,18 @@ const useStyles = makeStyles(theme => ({
     },
     homeTitle: {
         marginBottom: 30,
+        [theme.breakpoints.down("xs")]: {
+            fontSize: "2rem",
+            textAlign: "center"
+        },
     },
     quizImage: {
         width: "inherit",
+        [theme.breakpoints.down("sm")]: {
+            width: 400
+        },
+        [theme.breakpoints.down("xs")]: {
+            width: 300
+        },
     }
 }));

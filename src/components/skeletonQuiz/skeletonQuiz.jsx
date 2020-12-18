@@ -110,7 +110,7 @@ const SkeletonQuiz = (props) => {
 
                 <div className={styles.quizModeContainer}>
                     <Typography variant="body1">Select mode:</Typography>
-                    <RadioGroup name="quizMode" value={quizMode} onChange={handleChangeQuizMode} classes={{root: styles.radioGroupRoot}}>
+                    <RadioGroup name="quizMode" value={quizMode} onChange={handleChangeQuizMode} classes={{root: styles.radioGroupModeRoot}}>
                         <FormControlLabel value={"binary"} control={<Radio classes={{checked: styles.radioChecked}} />} label="Binary" />
                         <FormControlLabel value={"multiple"} control={<Radio classes={{checked: styles.radioChecked}} />} label="Multiple" />
                     </RadioGroup>
@@ -125,7 +125,7 @@ const SkeletonQuiz = (props) => {
                         }                             
                     </div>
                     <div>
-                        <RadioGroup name="quizOptions" value={selectedCurrentAnswers} onChange={handleChangeOption}>
+                        <RadioGroup name="quizOptions" value={selectedCurrentAnswers} onChange={handleChangeOption} classes={{root: styles.radioGruoupOptionRoot}}>
                             { 
                                 quizMode === "binary" && 
                                 booleanAnswerOptions.map(b => (
@@ -187,26 +187,56 @@ export default SkeletonQuiz;
 
 const useStyles = makeStyles((theme) => ({
     headerQuiz: {
-        padding: 8,
+        padding: theme.spacing(2),
+        [theme.breakpoints.down("sm")]: {
+            padding: theme.spacing(1),
+        }
     },
     contentQuiz: {
-        padding: 8,
+        padding: theme.spacing(2),
+        [theme.breakpoints.down("sm")]: {
+            padding: theme.spacing(1),
+        },
         display: "flex",
+        [theme.breakpoints.down("xs")]: {
+            flexDirection: "column"
+        },
 
         "& > div:nth-child(1)": {
-            flex: "0 1 60%"
+            flex: "0 1 60%",
+            display: "flex",
+            alignItems: "center",
+            marginRight: theme.spacing(1),
+            
+            "& > p": {
+                [theme.breakpoints.down("xs")]: {
+                    textAlign: "center"
+                }
+            }
         },
         "& > div:nth-child(2)": {
             display: "flex",
-            flex: "0 1 40%"
+            flex: "0 1 40%",
+            [theme.breakpoints.down("xs")]: {
+                justifyContent: "center"
+            }
         }
     },
     cardActionsRoot: {
-        justifyContent: "center"
+        justifyContent: "center",
+
+        "& > button": {
+            [theme.breakpoints.down("xs")]: {
+                fontSize: 10
+            }
+        }
     },
     questionTitle: {
         display: "flex",
-        alignItems: "center"
+        alignItems: "center",
+        [theme.breakpoints.down("xs")]: {
+            justifyContent: "center"
+        }
     },
     radioChecked: {
         color: `${theme.palette.primary.main} !important`
@@ -221,11 +251,24 @@ const useStyles = makeStyles((theme) => ({
     quizModeContainer: {
         display: "flex",
         alignItems: "center",
-        padding: 8
+        padding: theme.spacing(2),
+        [theme.breakpoints.down("sm")]: {
+            padding: theme.spacing(1),
+        },
+        [theme.breakpoints.down("xs")]: {
+            justifyContent: "center"
+        }
     },
-    radioGroupRoot: {
+    radioGroupModeRoot: {
         display: "flex",
         flexDirection: "row",
         marginLeft: 10
+    },
+    radioGruoupOptionRoot: {
+        [theme.breakpoints.down("xs")]: {
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center"
+        }
     }
   }));

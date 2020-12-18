@@ -24,8 +24,20 @@ const useStyles = makeStyles((theme) => ({
     },
     quizContainer: {
         width: 600,
+        [theme.breakpoints.down("xs")]: {
+            width: "100%"
+        },
         display: "flex",
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
+
+        "& > div": {
+            [theme.breakpoints.down("sm")]: {
+                margin: theme.spacing(1.5),
+            },
+            [theme.breakpoints.down("xs")]: {
+                margin: 0
+            }
+        }
     }
   }));

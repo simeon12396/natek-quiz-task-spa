@@ -32,6 +32,11 @@ export default QuizResultPage;
 const useStyles = makeStyles((theme) => ({
     resultTitle: {
         textAlign: "right",
-        margin: "1rem 2rem 0 0"
+        margin: "1rem 2rem 0 0",
+
+        [theme.breakpoints.down("xs")]: {
+            margin: "10px 0px 0px",
+            textAlign: "center"
+        }
     }
 }));

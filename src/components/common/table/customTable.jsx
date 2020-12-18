@@ -39,11 +39,11 @@ const useStyles = makeStyles((theme) => ({
         opacity: .9
     },
     tableRowRootBodySuccess: {
-        background: "green",
+        background: theme.palette.success.main,
         opacity: .8
     },
     tableRowRootBodyError: {
-        background: "red",
+        background: theme.palette.error.main,
         opacity: .9
     },
     tableCellRoot: {

@@ -129,7 +129,7 @@ const SkeletonQuiz = (props) => {
                             { 
                                 quizMode === "binary" && 
                                 booleanAnswerOptions.map(b => (
-                                    <FormControlLabel value={b} control={<Radio classes={{checked: styles.radioChecked}} />} label={b === "True" ? "Yes" : "No"} key={b} />))
+                                    <FormControlLabel value={b} control={<Radio classes={{checked: styles.radioChecked}} />} label={b} key={b} />))
                             }
                             {
                                 quizMode === "multiple" &&  

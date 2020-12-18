@@ -35,7 +35,7 @@ export default CustomTable;
 
 const useStyles = makeStyles((theme) => ({
     tableRowRootTitle: {
-        background: theme.palette.secondary.secondary,
+        background: theme.palette.primary.main,
         opacity: .9
     },
     tableRowRootBodySuccess: {
@@ -48,5 +48,6 @@ const useStyles = makeStyles((theme) => ({
     },
     tableCellRoot: {
         color: "white",
+        padding: 10
     }
 }));

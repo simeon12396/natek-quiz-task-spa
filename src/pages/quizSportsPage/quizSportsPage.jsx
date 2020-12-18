@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 const QuizSportsPage = () => {
     const styles = useStyles();
     const sportsQuizQuestions = useSelector(state => state.sportsQuizQuestions);
-    debugger;
+
     return(
         <div className={styles.root}>
             <div className={styles.quizContainer}>

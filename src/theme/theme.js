@@ -4,8 +4,6 @@ const MaterialUITheme = createMuiTheme({
     palette: {
         primary: {
             main: "#08518b",
-            green: "green",
-            red: "red"
         },
         secondary: {
             main: "#fff",

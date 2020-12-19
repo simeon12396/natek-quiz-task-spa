@@ -7,57 +7,59 @@ import { fetchCSBooleanQuestions, fetchCSMultipleChoicesQuestions } from "../../
 import { fetchMusicBooleanQuestions, fetchMusicMultipleChoicesQuestions } from "../../store/actions/musicQuizActions/musicQuizActions";
 
 const HomePage = () => {
-    const styles = useStyles();
-    const dispatch = useDispatch();
+  const styles = useStyles();
+  const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(fetchCSBooleanQuestions());
-        dispatch(fetchCSMultipleChoicesQuestions());
-        dispatch(fetchMusicBooleanQuestions());
-        dispatch(fetchMusicMultipleChoicesQuestions());
-    }, []);
+  useEffect(() => {
+    dispatch(fetchCSBooleanQuestions());
+    dispatch(fetchCSMultipleChoicesQuestions());
+    dispatch(fetchMusicBooleanQuestions());
+    dispatch(fetchMusicMultipleChoicesQuestions());
+  }, []);
 
-    return(
-     <div className={styles.root}>
-        <Typography variant="h3" className={styles.homeTitle}>Welcome to Natek Quiz!</Typography>
-        <img src={QuizImage} alt="Quiz Image" className={styles.quizImage}/>
+  return (
+    <div className={styles.root}>
+      <Typography variant="h3" className={styles.homeTitle}>
+        Welcome to Natek Quiz!
+      </Typography>
+      <img src={QuizImage} alt="Quiz Image" className={styles.quizImage} />
     </div>
-    )
+  );
 };
 
 export default HomePage;
 
-const useStyles = makeStyles(theme => ({
-    root: {
-        margin: "0 auto",
-        height: 500,
-        width: 800,
-        [theme.breakpoints.down("sm")]: {
-            width: 600
-        },
-        [theme.breakpoints.down("xs")]: {
-            width: "100%"
-        },
-        color: theme.palette.primary.main,
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center"
+const useStyles = makeStyles((theme) => ({
+  root: {
+    margin: "0 auto",
+    height: 500,
+    width: 800,
+    [theme.breakpoints.down("sm")]: {
+      width: 600,
     },
-    homeTitle: {
-        marginBottom: 30,
-        [theme.breakpoints.down("xs")]: {
-            fontSize: "2rem",
-            textAlign: "center"
-        },
+    [theme.breakpoints.down("xs")]: {
+      width: "100%",
     },
-    quizImage: {
-        width: "inherit",
-        [theme.breakpoints.down("sm")]: {
-            width: 400
-        },
-        [theme.breakpoints.down("xs")]: {
-            width: 300
-        },
-    }
+    color: theme.palette.primary.main,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  homeTitle: {
+    marginBottom: 30,
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "2rem",
+      textAlign: "center",
+    },
+  },
+  quizImage: {
+    width: "inherit",
+    [theme.breakpoints.down("sm")]: {
+      width: 400,
+    },
+    [theme.breakpoints.down("xs")]: {
+      width: 300,
+    },
+  },
 }));

@@ -1,4 +1,3 @@
-
 const SET_MUSIC_BOOLEAN_QUESTIONS = "set-music-boolean-questions";
 
 const SET_MUSIC_MULTIPLE_CHOICES_QUESTIONS = "set-music-multiple-choices-questions";

@@ -1,9 +1,9 @@
 const makeHttpService = async (requestType, jsonName) => {
-    if (requestType === "get") {
-        const fetchQuizQuestions = await fetch(jsonName);
+  if (requestType === "get") {
+    const fetchQuizQuestions = await fetch(jsonName);
 
-        return fetchQuizQuestions.json();
-    }
+    return fetchQuizQuestions.json();
+  }
 };
 
 export { makeHttpService };

@@ -1,7 +1,7 @@
 import { makeStyles } from "@material-ui/core/styles";
 import { AppBar, Toolbar, Typography } from "@material-ui/core";
 import { NavLink } from "react-router-dom";
-import CustomSelectDropdown from "../common/selectDropdown/customSelectDropdown";
+import CustomSelectDropdown from "../common/selectDropdown/selectDropdown";
 
 const Header = () => {
   const styles = useStyles();

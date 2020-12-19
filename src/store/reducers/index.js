@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
 import { computerScienceQuizReducer } from "./computerScienceQuizReducer/computerScienceQuizReducer";
-import { sportsQuizReducer } from "./sportsQuizReducer/sportsQuizReducer";
+import { musicQuizReducer } from "./musicQuizReducer/musicQuizReducer";
 
 const rootReducer = combineReducers({
     computerScienceQuizQuestions: computerScienceQuizReducer,
-    sportsQuizQuestions: sportsQuizReducer
+    musicQuizQuestions: musicQuizReducer
 });
 
 export { rootReducer }

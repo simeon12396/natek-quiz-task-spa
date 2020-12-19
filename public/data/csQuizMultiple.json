@@ -41,12 +41,12 @@
         "category": "Science: Computers",
         "type": "multiple",
         "difficulty": "medium",
-        "question": "In HTML, which non-standard tag used to be be used to make elements scroll across the viewport?",
-        "correct_answer": "&lt;marquee&gt;&lt;/marquee&gt;",
+        "question": "What was the name of the first Bulgarian personal computer?",
+        "correct_answer": "IMKO-1",
         "incorrect_answers": [
-          "&lt;scroll&gt;&lt;/scroll&gt;",
-          "&lt;move&gt;&lt;/move&gt;",
-          "&lt;slide&gt;&lt;/slide&gt;"
+          "Pravetz 82",
+          "Pravetz 8D",
+          "IZOT 1030"
         ]
       },
       {

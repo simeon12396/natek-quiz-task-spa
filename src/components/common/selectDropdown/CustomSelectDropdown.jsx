@@ -16,7 +16,7 @@ const CustomSelectDropdown = () => {
 
     const listItems = [
         { link: "/quiz/computer-science", label: "Computer Science"},
-        { link: "/quiz/sports", label: "Sports"}
+        { link: "/quiz/music", label: "Music"}
     ];
     
     return(

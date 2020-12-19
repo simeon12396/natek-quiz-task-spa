@@ -2,20 +2,20 @@ import { makeStyles } from '@material-ui/core/styles';
 import SkeletonQuiz from '../../components/skeletonQuiz/skeletonQuiz';
 import { useSelector } from "react-redux";
 
-const QuizSportsPage = () => {
+const QuizMusicPage = () => {
     const styles = useStyles();
-    const sportsQuizQuestions = useSelector(state => state.sportsQuizQuestions);
+    const musicQuizQuestions = useSelector(state => state.musicQuizQuestions);
 
     return(
         <div className={styles.root}>
             <div className={styles.quizContainer}>
-                <SkeletonQuiz questions={sportsQuizQuestions} quizType="sports" />
+                <SkeletonQuiz questions={musicQuizQuestions} quizType="music" />
             </div>
         </div>
     )
 };
 
-export default QuizSportsPage;
+export default QuizMusicPage;
 
 const useStyles = makeStyles((theme) => ({
     root: {

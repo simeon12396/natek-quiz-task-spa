@@ -6,8 +6,8 @@ import { RadioGroup, FormControlLabel, Radio  } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { setCSResult, setRestartCSQuiz } from '../../store/actions/computerScienceQuizActions/computerSceinceQuizActions';
-import { setRestartSportsQuiz, setSportsResult } from '../../store/actions/sportsQuizActions/sportsQuizActions';
 import CustomSnackbar from '../common/snackbar/customSnackbar';
+import { setMusicResult, setRestartMusicQuiz } from '../../store/actions/musicQuizActions/musicQuizActions';
 
 const SkeletonQuiz = (props) => {
     const { questions, quizType } = props;
@@ -63,7 +63,7 @@ const SkeletonQuiz = (props) => {
         ({ isCorrect: true, correctAnswer: c, yourAnswer: selectedAnswers[index] }) : 
         ({ isCorrect: false, correctAnswer: c, yourAnswer: selectedAnswers[index]}));
         setIsQuizSubmitted(true);
-        dispatch(quizType === "computer-science" ? setCSResult({ answerResults, quizMode }) : setSportsResult({ answerResults, quizMode }));
+        dispatch(quizType === "computer-science" ? setCSResult({ answerResults, quizMode }) : setMusicResult({ answerResults, quizMode }));
     };
 
     const handleChangeOption = (e) => {
@@ -91,7 +91,7 @@ const SkeletonQuiz = (props) => {
         setSelectedAnswers([]);
         setOpenAlert({openAlert: false, modeAlert: false});
         setIsQuizSubmitted(false);
-        dispatch(quizType === "computer-science" ? setRestartCSQuiz() : setRestartSportsQuiz());
+        dispatch(quizType === "computer-science" ? setRestartCSQuiz() : setRestartMusicQuiz());
     };
 
     if (!questions) {
@@ -150,7 +150,7 @@ const SkeletonQuiz = (props) => {
 
                     { isQuizSubmitted && 
                         <CustomButton variant="contained" color="primary">
-                            <NavLink to={`/quiz/${quizType === "sports" ? "sports" : "computer-science"}-result`} className={styles.link}>View Result</NavLink>
+                            <NavLink to={`/quiz/${quizType === "music" ? "music" : "computer-science"}-result`} className={styles.link}>View Result</NavLink>
                         </CustomButton>
                     }
                 </CardActions>

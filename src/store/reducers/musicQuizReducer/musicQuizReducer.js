@@ -1,4 +1,5 @@
-import { SET_RESTART_SPORTS_QUIZ, SET_SPORTS_BOOLEAN_QUESTIONS, SET_SPORTS_MULTIPLE_CHOICES_QUESTIONS, SET_SPORTS_RESULT } from "../../types/sportsQuizTypes/sportsQuizTypes";
+import { SET_MUSIC_BOOLEAN_QUESTIONS, SET_MUSIC_MULTIPLE_CHOICES_QUESTIONS, SET_MUSIC_RESULT, SET_RESTART_MUSIC_QUIZ } from "../../types/musicQuizTypes/musicQuizTypes";
+
 
 const initialState = {
     booleanQuestions: [],
@@ -6,24 +7,24 @@ const initialState = {
     result: []
 };
 
-const sportsQuizReducer = (state = initialState, {type, payload}) => {
+const musicQuizReducer = (state = initialState, {type, payload}) => {
     switch (type) {
-        case SET_SPORTS_BOOLEAN_QUESTIONS:
+        case SET_MUSIC_BOOLEAN_QUESTIONS:
           return {
             ...state,
             booleanQuestions: payload
           };
-        case SET_SPORTS_MULTIPLE_CHOICES_QUESTIONS:
+        case SET_MUSIC_MULTIPLE_CHOICES_QUESTIONS:
             return {
             ...state,
             multipleChoicesQuestions: payload
         };
-        case SET_SPORTS_RESULT: 
+        case SET_MUSIC_RESULT: 
           return {
             ...state,
             result: payload
         };
-        case SET_RESTART_SPORTS_QUIZ: 
+        case SET_RESTART_MUSIC_QUIZ: 
           return {
             ...state,
             result: []
@@ -33,4 +34,4 @@ const sportsQuizReducer = (state = initialState, {type, payload}) => {
     };
 };
 
-export { sportsQuizReducer }
+export { musicQuizReducer }

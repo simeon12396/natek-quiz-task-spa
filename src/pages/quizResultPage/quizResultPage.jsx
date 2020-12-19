@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const QuizResultPage = () => {
     const { quizTypeResult } = useParams();
-    const resultSelector = useSelector(state => quizTypeResult === "sports" ? state.sportsQuizQuestions.result : state.computerScienceQuizQuestions.result);
+    const resultSelector = useSelector(state => quizTypeResult === "music" ? state.musicQuizQuestions.result : state.computerScienceQuizQuestions.result);
     const { answerResults } = resultSelector;
     const correctedAnswers = answerResults.filter(a => a.isCorrect === true).length;
     const correctedAnswersToPercent = correctedAnswers * 100 / 10;

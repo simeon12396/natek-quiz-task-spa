@@ -113,12 +113,12 @@
         "category": "Entertainment: Music",
         "type": "multiple",
         "difficulty": "medium",
-        "question": "Which one of these people has been in the band ''Metallica'' in the past?",
-        "correct_answer": "Dave Mustaine",
+        "question": "Which member of the Wu-Tang Clan had only one verse in their debut album Enter the Wu-Tang (36 Chambers)?",
+        "correct_answer": "Masta Killa",
         "incorrect_answers": [
-          "Kurt Cobain",
-          "Joey Belladonna",
-          "Dave Lombardo"
+          "Method Man",
+          "Inspectah Deck",
+          "GZA"
         ]
       }
     ]
